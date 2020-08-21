@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>ACTIVITY</h1>
+    <a href="/">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+  {% for d in object %}
+  <div class="row row_act">
+    <div class="col-sm-12 col-md-8">
+      <p style="color: dodgerblue;">{{d.act1_title}}</p>
+      <p style="text-align:justify; column-count: 2; column-gap: 20px;">{{d.act1_desc | safe}}</p>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <figure>
+        <img src="{{d.act1_img.url}}" alt="" width="100%" class="img-fluid">
+      </figure>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>ARCHIVES</h1>
+    <a href="{% url 'archives:list' %}">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+  <div class="p-3">
+    <h3 style="color: dodgerblue;">Prout Magazines - {{object.year_name}}</h3>
+    <hr>
+
+    <div class="row my-4">
+      {% for magazine in object.magazine_set.all %}
+      <div class="col-md-2 col-sm-12">
+        <div class="card" style="width: 100%;">
+          <a href="{{magazine.mag_pdf.url}}" target="_blank">
+
+            <img src="{{magazine.mag_img.url}}" class="card-img-top" alt="..."></a>
+          <div class="card-body">
+            <p class="card-text text-center" style="font-size: 12px;">{{magazine.mag_title}}</p>
+          </div>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:5 %}
+    </div>
+    <div class="row my-4">
+      {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

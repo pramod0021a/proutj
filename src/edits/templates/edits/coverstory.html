@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>COVER STORY</h1>
+    <a href="/">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+  {% for d in object %}
+  <div class="coverstory_content">
+
+    <div class="row">
+      <div class="col-sm-4 d-flex">
+        <div class="cov_title m-auto">
+          <h3 style="color: dodgerblue;">{{d.coverstory_title}}</h3>
+          <p class="mt-4 text-center">By <br>{{d.coverstory_writer}} </p>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <figure>
+          <img src="{{d.coverstory_img.url}}" alt="" width="100%" class="img-fluid">
+        </figure>
+
+      </div>
+    </div>
+    <div class="cover_text">
+      <p style="text-align:justify; column-count: 3; column-gap: 20px;">{{d.coverstory_desc | safe}}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

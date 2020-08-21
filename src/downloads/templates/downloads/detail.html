@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>DOWNLOADS</h1>
+    <a href="{% url 'downloads:list' %}">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+  <h4 style="color: dodgerblue;">Download - {{object.name}}</h4>
+
+  <div class="p-5">
+    {% for item in object.item_set.all %}
+
+    <div class="shadow p-3 mb-5 bg-white rounded" style="font-style: italic;">
+      <a href="{{item.item_link}}" style="text-decoration: none; color: black;">
+        {{item.item_title}}
+      </a>
+    </div>
+
+
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

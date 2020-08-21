@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>SUBSCRIPTION</h1>
+    <a href="/">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+
+  <!-- ////////////// -->
+  <div class="row">
+    <div class="col-sm-12 col-md-7">
+      <h5 class="mt-4" style="color: dodgerblue;">Rate (India)</h5>
+      <hr>
+      <div class="d-flex">
+        <div class="col-scheme">Newstand Price:</div>
+        <div class="col-rate">&#8377; 30</div>
+      </div>
+      <div class="d-flex">
+        <div class="col-scheme">Annual Subscription:</div>
+        <div class="col-rate">&#8377; 324</div>
+      </div>
+      <div class="d-flex">
+        <div class="col-scheme">Two Year Subscription:</div>
+        <div class="col-rate">&#8377; 612</div>
+      </div>
+      <div class="d-flex">
+        <div class="col-scheme">Three Year Subscription:</div>
+        <div class="col-rate">&#8377; 864</div>
+      </div>
+      <div class="d-flex">
+        <div class="col-scheme">Five Year Subscription:</div>
+        <div class="col-rate">&#8377; 1350</div>
+      </div>
+      <div class="d-flex">
+        <div class="col-scheme">Ten Year Subscription:</div>
+        <div class="col-rate">&#8377; 2520</div>
+      </div>
+
+      <h5 class="mt-4" style="color: dodgerblue;">Overseas (By Airmail)</h5>
+      <hr>
+      <div class="d-flex">
+        <div class="col-scheme">Annual:</div>
+        <div class="col-rate">US$ 45</div>
+      </div>
+
+      <h5 class="mt-4" style="color: dodgerblue;">Overseas (By Paypal)</h5>
+      <hr>
+      <div class="d-flex">
+        <div class="col-scheme">US:</div>
+        <div class="col-rate">US$ 45</div>
+      </div>
+      <div class="d-flex">
+        <div class="col-scheme">Others:</div>
+        <div class="col-rate">US$ 50</div>
+      </div>
+
+    </div>
+    <div class="col-sm-12 col-md-1"></div>
+    <div class="col-sm-12 col-md-4 subscribe_res">
+      <figure class=" p-2" style="border: 1px solid lightgray;">
+        <a href="https://www.instamojo.com/proutjournal/prout-journal-bda1c/">
+          <img src="{% static 'images/subscribe.jpg' %}" alt="" width="100%">
+        </a>
+      </figure>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+{% endblock %}

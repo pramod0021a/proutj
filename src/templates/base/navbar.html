@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {% include 'base/css.html' %}
+</head>
+
+<body>
+  <div class="row row_top my-2 " id="head">
+    <div class="col-sm-12 col-md-4 col_logo ">
+      <figure style="padding: 10px;">
+        <img src="{% static 'images/header-logo.png' %}" alt="logo" / width="90%">
+      </figure>
+    </div>
+    <div class="col-sm-12 col-md-8 d-flex align-items-center">
+      <div class="baba_pic">
+        <img src="{% static 'images/baba.jpg' %}" alt="baba" width="100%" />
+        <p class="card-text" style="color: rgb(199, 52, 52); font-size: 8px; text-align: center;">Shrii Prabhat Ranjan
+          Sarkar<br>(Propounder-Prout)
+        </p>
+
+      </div>
+      <div class="baba_text">
+        <h5 style="color: dodgerblue;">
+          THOUGHT OF THE DAY
+        </h5>
+        {% for obj in object_list %}
+        <p style="font-size: 14px;">
+          {{obj.ananda_vani}}
+          <p>
+            {% endfor %}
+            <small style="color: rgb(199, 52, 52);">Shri Prabhat Ranjan Sarkar</small></p>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="container navbar active p-2">
+    <div class="logo">
+      <img src="{% static 'images/head-logo1.png' %}" alt="Logo" width="80%" style="margin-left: 20px;" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="{% url 'edits:home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'archives:list' %}">Archives</a></li>
+      <li><a href="{% url 'publications:list' %}">Publications</a></li>
+      <li><a href="{% url 'downloads:list' %}">Downloads</a></li>
+      <li><a href="{% url 'resources:list' %}">Resources</a></li>
+      <li><a href="{% url 'subscription' %}">Subscription</a></li>
+      <li><a href="{% url 'edits:contact' %}">Contact</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+</body>
+
+</html>

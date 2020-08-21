@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>ARCHIVES</h1>
+    <a href="/">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+  <marquee behavior="scroll" direction="right" scrollamount="12">
+    <img src="{% static 'images/c-jan12.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-oct12.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-dec13.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-nov13.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-apl14.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-jun14.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-feb15.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-sep16.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-dec16.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-mar16.jpg' %}" alt="" width="100px" class="mr-2">
+    <img src="{% static 'images/c-jan15.jpg' %}" alt="" width="100px" class="mr-2">
+
+  </marquee>
+
+  <div class="p-3">
+    <h3 style="color: dodgerblue;">Select a year</h3>
+    <hr>
+    <div class="row p-3">
+
+      {% for obj in object_list %}
+      <div class="col-md-2 mb-2">
+        <a href="{% url 'archives:detail' obj.id %}">
+          <button type="button" class="btn btn-secondary  p-5">{{obj.year_name}}</button>
+        </a>
+      </div>
+      {% if forloop.counter|divisibleby:5 %}
+    </div>
+    <div class="row p-3 ">
+      {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

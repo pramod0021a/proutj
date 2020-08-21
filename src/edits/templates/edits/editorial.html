@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>EDITORIAL</h1>
+    <a href="/">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+  {% for d in object %}
+  <div class="editorial_content">
+    <h4 style="color: dodgerblue;">{{d.editorial_title}}</h4>
+    <p style="text-align:justify; column-count: 3; column-gap: 20px;">{{d.editorial_desc | safe}}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

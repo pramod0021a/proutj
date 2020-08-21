@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+  {% include 'base/css.html' %}
+</head>
+
+<body>
+  <div class="container m-auto">
+    {% include 'base/navbar.html' %}
+    {% block content %}{% endblock %}
+  </div>
+  {% include 'base/footer.html' %}
+  {% include 'base/js.html' %}
+</body>
+<script>
+  // alert("testing");
+  const navSlide = () => {
+    const nav = document.querySelector(" .navbar");
+    const burgerToggle = document.querySelector(".burger");
+    // nav-links toggle
+    burgerToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+
+      // burger animation
+      burgerToggle.classList.toggle("toggle");
+    });
+  };
+  navSlide();
+</script>
+
+
+</html>

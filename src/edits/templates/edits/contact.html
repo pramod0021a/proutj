@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex ">
+    <h1>CONTACT US</h1>
+    <a href="/">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr>
+
+  <!-- ////////////// -->
+  <div class="row">
+    <div class="col-sm-12 col-md-6 ">
+      <h4 style="color: dodgerblue;">FIND US ON MAP</h4>
+      <hr>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.160028827028!2d77.21603891503408!3d28.534909282456383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce221d1fefb9b%3A0xec8c8424ef3d9a48!2sProut%20Bhavan!5e0!3m2!1sen!2sin!4v1582699380766!5m2!1sen!2sin"
+        width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    <div class="col-sm-12 col-md-6 div_form">
+      <h4 style="color: dodgerblue;">WRITE YOUR MESSAGE HERE</h4>
+      <hr>
+      <div class="px-4 bg-light">
+        <form action="/contact/" method="POST">{% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Your Name" class="validate">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="name@example.com" class="validate">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Conact No.</label>
+            <input type="tel" class="form-control" name="phone" placeholder="Your Contact No." class="validate">
+          </div>
+          <div class="mb-3">
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" name="message" rows="3" placeholder="Your Message"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-success">Send</button>
+
+            </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+</div>
+{% endblock %}

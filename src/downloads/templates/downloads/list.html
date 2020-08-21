@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="act_content w-75 m-auto my-4">
+  <div class="title_bar d-flex">
+    <h1>DOWNLOADS</h1>
+    <a href="/">
+      <button type=" button" class="btn btn-secondary">Back</button>
+    </a>
+  </div>
+  <hr />
+
+  <div class="py-5">
+    <div class="row p-3">
+
+      {% for obj in object_list %}
+      <div class="col-md-3 mb-2">
+        <div class="card" style="width: 100%;">
+          <a href="{% url 'downloads:detail' obj.id %}">
+            <img src="{{obj.item_icon.url}}" class="card-img-top" alt="...">
+          </a>
+          <div class="card-body">
+            <a href="{% url 'downloads:detail' obj.id %}" style="text-decoration: none;">
+              <h5 class="card-title text-center">{{obj.name}}</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:4 %}
+    </div>
+    <div class="row p-3 ">
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

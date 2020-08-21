@@ -1,0 +1,444 @@
+{% extends 'edits/base.html' %} {% load static %}
+<title>Home Page</title>
+
+{% block content %}
+<div class="row my-1 row_slider ">
+  <!-- slider -->
+  <div class="col-sm-12 col-md-9">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{obj.slider1_img.url}}" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <p>{{obj.slider1_title}}</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{obj.slider2_img.url}}" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <p>{{obj.slider2_title}}</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{obj.slider3_img.url}}" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <p>
+              {{obj.slider3_title}}
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{obj.slider4_img.url}}" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <p>
+              {{obj.slider4_title}}
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{obj.slider5_img.url}}" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <p>
+              {{obj.slider5_title}}
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{obj.slider6_img.url}}" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <p>
+              {{obj.slider6_title}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <!-- slider end//// -->
+  <!-- current issue start -->
+  <div class="col-sm-12 col-md-3 recent_res ">
+    <div class="card  " style="max-width: 100%;">
+      <div class="card-header">
+        <h4 class="text-uppercase"> Current Issue</h4>
+      </div>
+      <div class="card-body " style="background-color: rgb(245, 245, 245);">
+        <figure style="width: 93%; margin: auto;">
+          <a href="{{obj.current_pdf.url}}">
+            <img src="{{obj.current_img.url}}" alt="" width="100%" />
+          </a>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!-- current issue end/// -->
+</div>
+<!-- editorial & cover story mobo view -->
+<div class="container mobo_view">
+  <div class="row">
+    <div class="col-md-6">
+      <h4 class="mt-4" style="border-bottom: 1px solid red;">
+        EDITORIAL
+      </h4>
+
+      <h5 style="color: dodgerblue;">{{obj.editorial_title}}</h5>
+      <hr />
+      <p class="text-justify">
+        {{obj.editorial_intro | slice:":200"}}....
+      </p>
+      <a href="editorial/{{obj.id}}">
+        <button type="button" class="btn btn-secondary">Read More</button>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <h4 class="mt-4" style="border-bottom: 1px solid red;">
+        COVER STORY
+      </h4>
+
+      <h5 style="color: dodgerblue;">{{obj.coverstory_title}}</h5>
+      <hr />
+      <p class="text-justify">
+        {{obj.coverstory_intro | slice:":250"}}....
+      </p>
+      <a href="coverstory/{{obj.id}}">
+        <button type="button" class="btn btn-secondary">Read More</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- end mobo view/// -->
+<!-- main -->
+<div class="container " id="main">
+  <div class="row ">
+    <div class="col-sm-12 col-md-7">
+      <h4 style="border-bottom: 1px solid red;">ACTIVITIES</h4>
+      <div class="activity d-flex">
+        <div class="act p-2">
+          <div class="card" style="width: 100%;">
+            <img src="{{obj.act1_img.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text text-justify">
+                {{obj.act1_title | slice:":140"}}....
+              </p>
+              <a href="detail1/{{obj.id}}" class="btn btn-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="act p-2">
+          <div class="card" style="width: 100%;">
+            <img src="{{obj.act2_img.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text text-justify">
+                {{obj.act2_title | slice:":140"}}....
+              </p>
+              <a href="detail2/{{obj.id}}" class="btn btn-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="act p-2">
+          <div class="card" style="width: 100%;">
+            <img src="{{obj.act3_img.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text text-justify">
+                {{obj.act3_title | slice:":140"}}....
+              </p>
+              <a href="detail3/{{obj.id}}" class="btn btn-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="activity d-flex">
+        <div class="act p-2">
+          <div class="card" style="width: 100%;">
+            <img src="{{obj.act4_img.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text text-justify">
+                {{obj.act4_title | slice:":140"}}....
+              </p>
+              <a href="detail4/{{obj.id}}" class="btn btn-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="act p-2">
+          <div class="card" style="width: 100%;">
+            <img src="{{obj.act5_img.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text text-justify">
+                {{obj.act5_title | slice:":140"}}....
+              </p>
+              <a href="detail5/{{obj.id}}" class="btn btn-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="act p-2">
+          <div class="card" style="width: 100%;">
+            <img src="{{obj.act6_img.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text text-justify">
+                {{obj.act6_title | slice:":140"}}....
+              </p>
+              <a href="detail6/{{obj.id}}" class="btn btn-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="principles mt-4">
+        <h4 style="border-bottom: 1px solid red;">
+          FIVE FUNDAMENTAL PRINCIPLES OF PROUT
+        </h4>
+        <div class="prout-box bg-secondary text-white">
+          <div class="row-principle d-flex">
+            <div class="mark">
+              <div class="col-mark">1</div>
+            </div>
+            <div class="col-principle">
+              <p>
+                No individual should be allowed to accumulate any physical
+                wealth without the clear permission or approval of the
+                collective body.
+              </p>
+            </div>
+          </div>
+          <div class="row-principle d-flex">
+            <div class="mark">
+              <div class="col-mark">2</div>
+            </div>
+            <div class="col-principle">
+              <p>
+                There should be maximum utilization and rational distribution
+                of all mundane, supramundane and spiritual potentialities of
+                the universe.
+              </p>
+            </div>
+          </div>
+          <div class="row-principle d-flex">
+            <div class="mark">
+              <div class="col-mark">3</div>
+            </div>
+            <div class="col-principle">
+              <p>
+                There should be maximum utilization of the physical,
+                metaphysical and spiritual potentialities of unit and
+                collective body of the human society.
+              </p>
+            </div>
+          </div>
+          <div class="row-principle d-flex">
+            <div class="mark">
+              <div class="col-mark">4</div>
+            </div>
+            <div class="col-principle">
+              <p>
+                There should be proper adjustment amongst these physical,
+                metaphysical, mundane, supramundane and spiritual
+                utilizations.
+              </p>
+            </div>
+          </div>
+          <div class="row-principle d-flex">
+            <div class="mark">
+              <div class="col-mark">5</div>
+            </div>
+            <div class="col-principle">
+              <p>
+                The method of utilization should vary in accordance with the
+                changes in time, space and person and rhe utilization should
+                be of progressive nature.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-2 middle" style="border: 1px solid lightgrey;">
+      <h4 style="border-bottom: 1px solid red;">RECENT ISSUES</h4>
+      <div class="recent d-flex my-2">
+        <div class="recent_pic ml-2">
+          <a href="{{obj.recent1_pdf.url}}">
+            <img src="{{obj.recent1_img.url}}" alt="" / width="88px">
+          </a>
+        </div>
+        <div class="recent_text ml-2">{{obj.recent1_title}}</div>
+      </div>
+
+      <div class="recent d-flex my-2">
+        <div class="recent_pic ml-2">
+          <a href="{{obj.recent2_pdf.url}}">
+            <img src="{{obj.recent2_img.url}}" alt="" / width="88px">
+          </a>
+        </div>
+        <div class="recent_text ml-2">{{obj.recent2_title}}</div>
+      </div>
+
+      <div class="recent d-flex my-2">
+        <div class="recent_pic ml-2">
+          <a href="{{obj.recent3_pdf.url}}">
+            <img src="{{obj.recent3_img.url}}" alt="" / width="88px">
+          </a>
+        </div>
+        <div class="recent_text ml-2">{{obj.recent3_title}}</div>
+      </div>
+      <!-- <figure>
+          <a href="{{obj.current_pdf.url}}">
+            <img src="{{obj.current_img.url}}" alt="" / width="100%">
+          </a>
+        </figure> -->
+      <div class="wide_view">
+        <h4 class="mt-4" style="border-bottom: 1px solid red;">
+          EDITORIAL
+        </h4>
+
+        <h5 style="color: dodgerblue;">{{obj.editorial_title}}</h5>
+        <hr />
+        <p class="text-justify">
+          {{obj.editorial_intro | slice:":200"}}....
+        </p>
+        <a href="editorial/{{obj.id}}">
+          <button type="button" class="btn btn-info">Read More</button>
+        </a>
+        <h4 class="mt-4" style="border-bottom: 1px solid red;">
+          COVER STORY
+        </h4>
+
+        <h5 style="color: dodgerblue;">{{obj.coverstory_title}}</h5>
+        <hr />
+        <p class="text-justify">
+          {{obj.coverstory_intro | slice:":230"}}....
+        </p>
+        <a href="coverstory/{{obj.id}}">
+          <button type="button" class="btn btn-info">Read More</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-3 right">
+      <div class="col-12 ">
+        <figure>
+          <img src="{{obj.ad_img.url}}" alt="" width="100%" />
+        </figure>
+      </div>
+      <div class="col-12 p-2" style="border: 1px solid lightgrey;">
+        <a href="https://www.instamojo.com/proutjournal/prout-journal-bda1c/">
+          <img src="{% static 'images/subscribe.jpg' %}" alt="" width="100%" />
+        </a>
+      </div>
+      <div class="col-12 mt-3 p-2" style="border: 1px solid lightgray;">
+        <figure>
+          <img src="{% static 'images/test2.jpg' %}" alt="" width="100%" height="343px" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- main end/// -->
+<!-- partners -->
+<div class="container mt-4" style="background-color:rgb(245, 245, 245);">
+  <div class="row w-75 m-auto ">
+    <h4 class="text-center my-4" style="color: dodgerblue;">
+      MORE FROM OUR PARTNERS
+    </h4>
+    <div class="col-sm-12 col-md-3 div_partner mb-5">
+      <div class="card" style="width: 100%;">
+        <img src="{{obj.partner1_img.url}}" class="card-img-top" alt="Prout Hindi" width="100%" />
+        <div class="card-body">
+          <h6 class="card-title text-center">{{obj.partner1_title}}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3 div_partner mb-5">
+      <div class="card" style="width: 100%;">
+        <img src="{{obj.partner2_img.url}}" class="card-img-top" alt="Prout Kranti" width="100%" />
+        <div class="card-body">
+          <h6 class="card-title text-center">{{obj.partner2_title}}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3 div_partner mb-5">
+      <div class="card" style="width: 100%;">
+        <img src="{{obj.partner3_img.url}}" class="card-img-top" alt="Nutan Prithvi" width="100%" />
+        <div class="card-body">
+          <h6 class="card-title text-center">{{obj.partner3_title}}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3 div_partner mb-5">
+      <div class="card" style="width: 100%;">
+        <img src="{{obj.partner4_img.url}}" class="card-img-top" alt="Rakta Manjari" width="100%" />
+        <div class="card-body">
+          <h6 class="card-title text-center">{{obj.partner4_title}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partners end/// -->
+<!-- editorial board -->
+<div class="container mt-4 text-center">
+  <h4 class="mb-3" style="color: dodgerblue;">OUR TEAM</h4>
+
+  <hr />
+  <div class="row_team d-flex">
+    <div class="col_team">
+      <span><b>Editor</b></span><br />{{obj.editor}}
+    </div>
+    <div class="col_team">
+      <span><b>Editorial Board</b></span><br />{{obj.editorial_board}}
+    </div>
+  </div>
+  <hr />
+
+  <div class="row_team d-flex">
+    <div class="col_team">
+      <span><b>General Manager</b></span><br />{{obj.general_manager}}
+    </div>
+    <div class="col_team">
+      <span><b>Business Director</b></span><br />{{obj.business_director}}
+    </div>
+    <div class="col_team">
+      <span><b>Circulation Manager</b></span><br />{{obj.circular_manager}}
+    </div>
+  </div>
+  <hr />
+  <div class="row_team d-flex">
+    <div class="col_team">
+      <span><b>Correspondents</b></span><br />{{obj.correspondents}}
+    </div>
+    <div class="col_team">
+      <span><b>Web Dgn. & Development</b></span><br />Pramod Kumar
+    </div>
+  </div>
+  <hr />
+</div>
+<!-- editorial board end/// -->
+<!-- footer -->
+<div class="container">
+  <footer class="my-4 d-flex justify-content-center text-white"
+    style="background-color: #008080; height: 30px; line-height: 30px;">
+    <p style="font-size: 12px;">
+      &copy;Copyrights@proutjournal.com. All Rights Reserved.
+    </p>
+  </footer>
+</div>
+<!-- footer end/// -->
+
+
+</div>
+{% endblock %}

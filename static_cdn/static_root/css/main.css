@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+/* navbar */
+
+.wraper-menu {
+  background: gray;
+  /* min-height: 50px; */
+}
+
+.collapsable_menu {
+  width: 100%;
+  background-color: gray;
+  padding: 5px 20px;
+  display: none;
+
+}
+
+.dash {
+  width: 33px;
+  height: 3px;
+  margin: 3px;
+  background-color: white;
+}
+
+ul {
+  margin-bottom: 0px;
+  background: gray;
+}
+
+ul li {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  width: 12%;
+  min-height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+ul li a:hover {
+  background: orange;
+  color: black;
+  text-decoration: none;
+}
+
+ul ul {
+  position: absolute;
+  display: none;
+}
+
+ul ul li {
+  width: 100%;
+  background: gray;
+}
+
+ul li:hover>ul {
+  display: block;
+  width: 100%;
+}
+
+ul ul ul {
+  display: none;
+  margin-left: 100%;
+  top: 0;
+}
+
+#clear {
+  clear: both;
+}
+
+
+
+/* slider */
+.carousel-caption p {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+/* activity */
+.act {
+  flex: 1;
+}
+
+/* prout principles */
+.row-principle {
+  display: flex;
+}
+
+.prout-box {
+  padding: 10px;
+}
+
+.col-mark {
+  width: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 10px;
+  background: #800080;
+}
+
+.mark {
+  margin-right: 5px;
+}
+
+.col-principle {
+  margin-top: 10px;
+}
+
+/* team */
+.row_team {
+  justify-content: center;
+}
+
+.col_team {
+  margin-right: 20px;
+  text-align: center;
+}
+
+/* activity */
+.title_bar {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* subscription */
+.col-scheme {
+  flex: 1;
+}
+
+.col-rate {
+  flex: 2;
+}
+
+@media screen and (max-width: 540px) {
+  .col_logo img {
+    width: 50%;
+  }
+
+  .baba_pic img {
+    width: 120px;
+  }
+
+  .thought_text p {
+    padding-left: 10px;
+  }
+
+  .recent_res {
+    margin-top: 5px;
+  }
+
+  .activity {
+    flex-direction: column;
+  }
+
+  .row_team {
+    flex-direction: column;
+  }
+
+  .middle {
+    margin-top: 30px;
+  }
+
+  .right {
+    margin-top: 30px;
+  }
+
+  .div_form {
+    margin-top: 30px;
+  }
+
+  .subscribe_res {
+    margin-top: 30px;
+  }
+
+  .div_partner {
+    margin-bottom: 20px;
+  }
+
+  .wraper-menu .nav_list {
+    display: none;
+  }
+
+  .collapsable_menu {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+
+  .wraper-menu.active {
+    background-color: lightgray;
+  }
+
+  .wraper-menu.active .nav_list {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+  }
+
+  /* .nav_list {
+    display: flex;
+    flex-direction: column;
+  } */
+
+  ul li {
+    width: 40%;
+    text-align: left;
+    padding-left: 5px;
+  }
+
+  ul li a {
+    padding-left: 5px;
+    color: black;
+  }
+
+
+}
